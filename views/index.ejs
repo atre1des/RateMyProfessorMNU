@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RateMyProfessorMNU</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <div class="header-content">
+                            <span class="title">Professor Name</span>
+                            <form method="GET" action="/">
+                                <% if (searchQuery) { %>
+                                    <input type="hidden" name="search" value="<%= searchQuery %>">
+                                <% } %>
+                                <input type="hidden" name="sort" value="name">
+                                <select name="order">
+                                    <option value="asc" <%= sortBy === 'name' && sortOrder === 'asc' ? 'selected' : '' %>>A-Z</option>
+                                    <option value="desc" <%= sortBy === 'name' && sortOrder === 'desc' ? 'selected' : '' %>>Z-A</option>
+                                </select>
+                                <button type="submit">Apply</button>
+                            </form>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="header-content">
+                            <span class="title">Overall Experience</span>
+                            <form method="GET" action="/">
+                                <% if (searchQuery) { %>
+                                    <input type="hidden" name="search" value="<%= searchQuery %>">
+                                <% } %>
+                                <input type="hidden" name="sort" value="rating">
+                                <select name="order">
+                                    <option value="desc" <%= sortBy === 'rating' && sortOrder === 'desc' ? 'selected' : '' %>>Highest</option>
+                                    <option value="asc" <%= sortBy === 'rating' && sortOrder === 'asc' ? 'selected' : '' %>>Lowest</option>
+                                </select>
+                                <button type="submit">Apply</button>
+                            </form>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% professors.forEach(professor => { %>
+                    <tr>
+                        <td>
+                            <a href="/professor/<%= professor._id %>">
+                                <%= professor.name %>
+                            </a>
+                        </td>
+                        <td class="center-text">
+                            <%= professor.overallExperience ? 
+                                professor.overallExperience.toFixed(2) : 'No ratings' %>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

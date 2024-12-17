@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= professor.name %> - Ratings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    
+    <div class="container">
+        <div class="content-header">
+            <h2><%= professor.name %></h2>
+            <a href="/professor/<%= professor._id %>/rate" class="rate-btn">
+                Rate Professor
+            </a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Course</th>
+                    <th>Difficulty Score</th>
+                    <th>Teaching Quality</th>
+                    <th>Course Quality</th>
+                    <th>Overall Experience</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (ratings.length > 0) { %>
+                    <% ratings.forEach(rating => { %>
+                        <tr>
+                            <td><%= rating.course.name %></td>
+                            <td class="center-text"><%= rating.difficulty.toFixed(2) %></td>
+                            <td class="center-text"><%= rating.teachingQuality.toFixed(2) %></td>
+                            <td class="center-text"><%= rating.courseQuality.toFixed(2) %></td>
+                            <td class="center-text"><%= ((rating.courseQuality + rating.teachingQuality) / 2).toFixed(2) %></td>
+                        </tr>
+                    <% }) %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="5" class="center-text">No ratings yet</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html> 

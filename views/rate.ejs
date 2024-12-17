@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rate <%= professor.name %></title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    
+    <div class="container">
+        <h2 class="rate-title">Rate <%= professor.name %></h2>
+        
+        <form class="rate-form" method="POST" action="/professor/<%= professor._id %>/rate">
+            <div class="form-group">
+                <label for="courseId">Course:</label>
+                <select name="courseId" required>
+                    <% courses.forEach(course => { %>
+                        <option value="<%= course._id %>">
+                            <%= course.name %>
+                        </option>
+                    <% }) %>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="teachingQuality">Teaching Quality:</label>
+                <select name="teachingQuality" required>
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="difficulty">Difficulty Score:</label>
+                <select name="difficulty" required>
+                    <option value="1">1 - Very Easy</option>
+                    <option value="2">2 - Easy</option>
+                    <option value="3">3 - Moderate</option>
+                    <option value="4">4 - Difficult</option>
+                    <option value="5">5 - Very Difficult</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="courseQuality">Course Quality:</label>
+                <select name="courseQuality" required>
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+            </div>
+            
+            <button type="submit">Submit Rating</button>
+        </form>
+    </div>
+</body>
+</html> 

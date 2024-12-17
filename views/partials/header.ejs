@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="/styles.css">
+<div class="header">
+    <a href="/">
+        <img src="/images/logo_red.png" alt="RateMyProfessor Logo">
+        <h1>RateMyProfessor</h1>
+    </a>
+    <form class="search-form" method="GET" action="/">
+        <input type="text" name="search" value="<%= locals.searchQuery || '' %>" placeholder="Search professor...">
+        <button class="search-btn" type="submit">Search</button>
+    </form>
+</div> 

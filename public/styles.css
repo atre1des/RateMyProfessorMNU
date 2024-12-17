@@ -1,0 +1,208 @@
+/* reset css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* page setup */
+body, input, select, button {
+    font-family: "Lato", sans-serif;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #a51c30;
+    border-bottom: 1px solid #dee2e6;
+}
+
+img {
+    height: 55px;
+}
+
+.header h1 {
+    color: white;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+/* search bar and buttons */
+.search-form {
+    display: flex;
+    gap: 10px;
+}
+
+.search-form input {
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 0.95em;
+}
+
+/* buttons */
+.search-form button, .rate-btn, button[type="submit"], th button {
+    padding: 8px 16px;
+    background-color: white;
+    color: #9D1B2E;
+    border: 1px solid #9D1B2E;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95em;
+}
+
+/* button hover effects */
+.search-form button:hover, .rate-btn:hover, button[type="submit"]:hover, th button:hover {
+    background-color: #9D1B2E;
+    color: white;
+    border: 1px solid #dee3ed;
+}
+
+/* table layout */
+table {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th, td {
+    padding: 10px 50px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+td:first-child {
+    padding-left: 30px;
+    width: 70%;
+}
+
+td:last-child {
+    padding-right: 30px;
+    width: 30%;
+}
+
+th {
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    white-space: nowrap;
+}
+
+th .header-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+th .title {
+    margin-right: 10px;
+}
+
+th form {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 0;
+}
+
+td.center-text {
+    text-align: center;
+}
+
+tr:last-child td {
+    border-bottom: 1px solid #ddd;
+}
+
+/* links */
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #700818;
+}
+
+/* dropdown menus */
+th select {
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.95em;
+    background-color: white;
+}
+
+th button {
+    font-size: 0.9em;
+    margin-left: 4px;
+}
+
+/* headers in professors.ejs */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+}
+
+/* titles in professors.ejs */
+.content-header h2,
+.rate-title {
+    text-align: center;
+    font-size: 1.8em;
+    color: #2D3B45;
+}
+
+/* ratings */
+.rate-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rate-title {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #2D3B45;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 0.95em;
+}
